@@ -2,20 +2,21 @@
 int main()
 {
     int n,a=0,b=1,i,c;
-    printf("Enter the number of terms in the Fibonacci series: ");
+    printf("Enter the term number in the Fibonacci series: ");
     scanf("%d",&n);
-    printf("Fibonacci series: ");
-    for (i=0;i<n;i++)
+    if (n==1)
+        c=a;
+    else if (n==2)
+        c=b;
+    else
     {
-        if (i<=1)
-            c=i;
-        else
+        for (i=3;i<=n;i++)
         {
             c=a+b;
             a=b;
             b=c;
         }
-        printf("%d ",c);
     }
+    printf("The %dth term in the Fibonacci series is: %d", n, c);
     return 0;
 }
